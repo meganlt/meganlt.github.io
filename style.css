@@ -26,16 +26,24 @@ header {
   background: #743165;
   color: white;
   padding: 20px;
+  position: relative;
 }
+
+header h1 { margin: 10px 0 0; }
 
 header p {
   color: rgba(255, 255, 255, 0.75);
   font-size: 14px;
+  width: calc(100% - 230px);
 }
 
 header img {
   background-color: rgba(0,0,0,0.5);
-  min-width: 230px;
+  width: 180px;
+  position: absolute;
+  border-radius: 150px;
+  top: 40px;
+  right: 50px;
 }
 
 h1, h2 {
@@ -67,7 +75,7 @@ main {
 
 .additional-info {
   flex-grow: 1;
-  padding: 0 20px;
+  padding: 30px 20px 0;
 }
 
 .experience-block {
@@ -140,11 +148,32 @@ main {
   vertical-align:top;
 }
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 767px) {
   main { flex-wrap: wrap;}
   .experience, .additional-info {
     flex-grow: 1;
-    min-width: 100%;
+    min-width: calc(100% - 40px);
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header h1 { order: 2; }
+  
+  header p {
+    order: 3;
+    text-align: center;
+  }
+
+  header img {
+    position: inherit;
+    order: 1;
+    top: 10px;
+    left: auto;
+    right: auto;
   }
   
 }
